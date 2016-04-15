@@ -6,14 +6,14 @@ resource "aws_security_group" "redis" {
   vpc_id = "${var.vpc_id}"
 
   tags {
-    name = "${var.tag_name}"
-    description = "${var.tag_description}"
-    environment = "${var.tag_environment}"
-    creator = "${var.tag_creator}"
-    customer = "${var.tag_customer}"
-    owner = "${var.tag_owner}"
-    product = "${var.tag_product}"
-    costcenter = "${var.tag_costcenter}"
+    Name = "${var.tag_name}"
+    Description = "${var.tag_description}"
+    Environment = "${var.tag_environment}"
+    Creator = "${var.tag_creator}"
+    Customer = "${var.tag_customer}"
+    Owner = "${var.tag_owner}"
+    Product = "${var.tag_product}"
+    Costcenter = "${var.tag_costcenter}"
   }
 }
 
@@ -40,14 +40,14 @@ resource "aws_elasticache_cluster" "redis" {
   security_group_ids = ["${aws_security_group.redis.id}"]
 
   tags {
-    name = "${var.tag_name}"
-    description = "${var.tag_description}"
-    environment = "${var.tag_environment}"
-    creator = "${var.tag_creator}"
-    customer = "${var.tag_customer}"
-    owner = "${var.tag_owner}"
-    product = "${var.tag_product}"
-    costcenter = "${var.tag_costcenter}"
+    Name = "${var.tag_name}"
+    Description = "${var.tag_description}"
+    Environment = "${var.tag_environment}"
+    Creator = "${var.tag_creator}"
+    Customer = "${var.tag_customer}"
+    Owner = "${var.tag_owner}"
+    Product = "${var.tag_product}"
+    Costcenter = "${var.tag_costcenter}"
   }
 }
 
