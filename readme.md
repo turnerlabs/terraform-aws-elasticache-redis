@@ -1,6 +1,6 @@
 # terraform-aws-elasticache-redis
 
-A Terraform module to create an Amazon Web Services (AWS) Redis ElastiCache cluster.
+A Terraform module that represents an AWS ElastiCache Redis cluster.  Note that a default security group is created and outputted that can be extended.  See basic example usage below and more examples [here](/examples).
 
 ### Usage
 
