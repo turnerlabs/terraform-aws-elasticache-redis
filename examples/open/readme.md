@@ -19,10 +19,10 @@ module "elasticache_redis" {
 
   tag_name = "redis"
   tag_description = "redis cluster for development"
-  tag_creator = "jritsema"
-  tag_product = "poc"
-  tag_customer = "jritsema"
-  tag_owner = "jritsema"
+  tag_creator = "creator"
+  tag_product = "product"
+  tag_customer = "customer"
+  tag_owner = "owner"
   tag_environment = "dev"
   tag_costcenter = "TBD"
 }
