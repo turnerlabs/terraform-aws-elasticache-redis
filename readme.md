@@ -34,13 +34,13 @@ module "elasticache_redis" {
 - `maintenance_window` - 60 minute time window to reserve for maintenance
   (default: `sun:05:00-sun:06:00`)
 - `tag_name`
-- `tag_description`
-- `tag_creator`
-- `tag_product`
-- `tag_customer`
-- `tag_owner`
+- `tag_billing`
 - `tag_environment`
-- `tag_costcenter`
+- `tag_creator`
+- `tag_customer`
+- `tag_team`
+- `tag_product`
+
 
 ### Outputs
 
