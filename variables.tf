@@ -1,8 +1,6 @@
-variable "vpc_id" {
-}
+variable "vpc_id" {}
 
-variable "private_subnet_ids" {
-}
+variable "private_subnet_ids" {}
 
 variable "engine_version" {
   default = "2.8.24"
@@ -18,27 +16,10 @@ variable "maintenance_window" {
 }
 
 # tags
-
-variable "tag_name" {
-}
-
-variable "tag_description" {
-}
-
-variable "tag_environment" {
-}
-
-variable "tag_creator" {
-}
-
-variable "tag_customer" {
-}
-
-variable "tag_owner" {
-}
-
-variable "tag_product" {
-}
-
-variable "tag_costcenter" {
-}
+variable "tag_name" {}
+variable "tag_billing" {}
+variable "tag_environment" {}
+variable "tag_creator" {}
+variable "tag_customer" {}
+variable "tag_team" {}
+variable "tag_product" {}

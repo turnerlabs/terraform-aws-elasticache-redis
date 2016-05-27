@@ -7,13 +7,12 @@ resource "aws_security_group" "redis" {
 
   tags {
     Name = "${var.tag_name}"
-    Description = "${var.tag_description}"
-    Environment = "${var.tag_environment}"
-    Creator = "${var.tag_creator}"
-    Customer = "${var.tag_customer}"
-    Owner = "${var.tag_owner}"
-    Product = "${var.tag_product}"
-    Costcenter = "${var.tag_costcenter}"
+    billing = "${var.tag_billing}"
+    environment = "${var.tag_environment}"
+    creator = "${var.tag_creator}"
+    customer = "${var.tag_customer}"
+    team = "${var.tag_team}"
+    product = "${var.tag_product}"
   }
 }
 
@@ -41,13 +40,12 @@ resource "aws_elasticache_cluster" "redis" {
 
   tags {
     Name = "${var.tag_name}"
-    Description = "${var.tag_description}"
-    Environment = "${var.tag_environment}"
-    Creator = "${var.tag_creator}"
-    Customer = "${var.tag_customer}"
-    Owner = "${var.tag_owner}"
-    Product = "${var.tag_product}"
-    Costcenter = "${var.tag_costcenter}"
+    billing = "${var.tag_billing}"
+    environment = "${var.tag_environment}"
+    creator = "${var.tag_creator}"
+    customer = "${var.tag_customer}"
+    team = "${var.tag_team}"
+    product = "${var.tag_product}"
   }
 }
 

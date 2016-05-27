@@ -18,13 +18,12 @@ module "elasticache_redis" {
   maintenance_window = "sun:05:00-sun:06:00"
 
   tag_name = "redis"
-  tag_description = "redis cluster for development"
-  tag_creator = "creator"
-  tag_product = "product"
-  tag_customer = "customer"
-  tag_owner = "owner"
+  tag_billing = "90193400"
   tag_environment = "dev"
-  tag_costcenter = "TBD"
+  tag_creator = "me@email.com"
+  tag_customer = "cnn"
+  tag_team = "myteam"
+  tag_product = "my-app"
 }
 
 resource "aws_security_group_rule" "access_in" {
