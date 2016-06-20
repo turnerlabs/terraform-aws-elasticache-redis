@@ -7,12 +7,9 @@ resource "aws_security_group" "redis" {
 
   tags {
     Name = "${var.tag_name}"
-    billing = "${var.tag_billing}"
     environment = "${var.tag_environment}"
-    creator = "${var.tag_creator}"
-    customer = "${var.tag_customer}"
     team = "${var.tag_team}"
-    product = "${var.tag_product}"
+    application = "${var.tag_application}"
   }
 }
 
@@ -21,13 +18,13 @@ resource "aws_security_group" "redis" {
 #
 
 resource "aws_elasticache_subnet_group" "default" {
-  name = "subnet-group-${var.tag_customer}-${var.tag_product}-${var.tag_environment}"
-  description = "Private subnets for the ElastiCache instances: ${var.tag_customer} ${var.tag_product} ${var.tag_environment}"
+  name = "subnet-group-${var.tag_team}-${var.tag_application}-${var.tag_environment}"
+  description = "Private subnets for the ElastiCache instances: ${var.tag_team} ${var.tag_application} ${var.tag_environment}"
   subnet_ids = ["${split(",", var.private_subnet_ids)}"]
 }
 
 resource "aws_elasticache_cluster" "redis" {
-  cluster_id = "${var.tag_customer}-${var.tag_product}-${var.tag_environment}"
+  cluster_id = "${var.tag_team}-${var.tag_application}-${var.tag_environment}"
   engine = "redis"
   engine_version = "${var.engine_version}"
   maintenance_window = "${var.maintenance_window}"
@@ -40,12 +37,9 @@ resource "aws_elasticache_cluster" "redis" {
 
   tags {
     Name = "${var.tag_name}"
-    billing = "${var.tag_billing}"
     environment = "${var.tag_environment}"
-    creator = "${var.tag_creator}"
-    customer = "${var.tag_customer}"
     team = "${var.tag_team}"
-    product = "${var.tag_product}"
+    application = "${var.tag_application}"
   }
 }
 

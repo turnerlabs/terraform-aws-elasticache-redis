@@ -16,12 +16,9 @@ module "elasticache_redis" {
   maintenance_window = "sun:05:00-sun:06:00"
 
   tag_name = "redis"
-  tag_billing = "90193400"
   tag_environment = "dev"
-  tag_creator = "me@email.com"
-  tag_customer = "cnn"
   tag_team = "myteam"
-  tag_product = "my-app"
+  tag_application = "my-app"
 }
 ```
 
@@ -34,12 +31,9 @@ module "elasticache_redis" {
 - `maintenance_window` - 60 minute time window to reserve for maintenance
   (default: `sun:05:00-sun:06:00`)
 - `tag_name`
-- `tag_billing`
 - `tag_environment`
-- `tag_creator`
-- `tag_customer`
 - `tag_team`
-- `tag_product`
+- `tag_application`
 
 
 ### Outputs
