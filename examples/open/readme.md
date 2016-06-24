@@ -8,7 +8,7 @@ provider "aws" {
 }
 
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.0"
 
   vpc_id = "vpc-d070efb3"
   private_subnet_ids = "subnet-020d8b59,subnet-13f50b64"
