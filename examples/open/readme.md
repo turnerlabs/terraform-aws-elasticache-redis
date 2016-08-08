@@ -8,7 +8,9 @@ provider "aws" {
 }
 
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.0"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.1"
+
+  cluster_id = "myteam-myapp-dev"
 
   vpc_id = "vpc-d070efb3"
   private_subnet_ids = "subnet-020d8b59,subnet-13f50b64"
@@ -20,7 +22,7 @@ module "elasticache_redis" {
   tag_name = "redis"
   tag_environment = "dev"
   tag_team = "myteam"
-  tag_application = "my-app"
+  tag_application = "myapp"
 }
 
 resource "aws_security_group_rule" "access_in" {

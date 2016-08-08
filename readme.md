@@ -6,7 +6,9 @@ A Terraform module that represents an AWS ElastiCache Redis cluster.  Note that 
 
 ```terraform
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.0"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.1"
+
+  cluster_id = "myteam-myapp-dev"
 
   vpc_id = "vpc-20f74844"
   private_subnet_ids = "subnet-4a887f3c,subnet-76dae35d"
@@ -18,12 +20,13 @@ module "elasticache_redis" {
   tag_name = "redis"
   tag_environment = "dev"
   tag_team = "myteam"
-  tag_application = "my-app"
+  tag_application = "myapp"
 }
 ```
 
 ### Variables
 
+- `cluster_id` - ID of the cluster
 - `vpc_id` - ID of VPC meant to house the cache
 - `private_subnet_ids` - Comma delimited list of private subnet IDs
 - `engine_version` - Cache engine version (default: `2.8.24`)

@@ -24,7 +24,7 @@ resource "aws_elasticache_subnet_group" "default" {
 }
 
 resource "aws_elasticache_cluster" "redis" {
-  cluster_id = "${var.tag_team}-${var.tag_application}-${var.tag_environment}"
+  cluster_id = "${var.cluster_id}"
   engine = "redis"
   engine_version = "${var.engine_version}"
   maintenance_window = "${var.maintenance_window}"
