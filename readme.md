@@ -33,6 +33,7 @@ module "elasticache_redis" {
 - `instance_type` - Instance type for cache instance (default: `cache.m3.medium`)
 - `maintenance_window` - 60 minute time window to reserve for maintenance
   (default: `sun:05:00-sun:06:00`)
+- `parameter_group_name` - Name of the parameter group to associate with this cache cluster (default: `default.redis2.8`)
 - `tag_name`
 - `tag_environment`
 - `tag_team`
