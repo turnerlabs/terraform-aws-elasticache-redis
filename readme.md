@@ -6,7 +6,7 @@ A Terraform module that represents an AWS ElastiCache Redis cluster.  Note that 
 
 ```terraform
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v1.1"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v2.0"
 
   cluster_id = "myteam-myapp-dev"
 
