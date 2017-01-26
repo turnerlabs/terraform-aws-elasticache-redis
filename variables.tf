@@ -8,6 +8,10 @@ variable "engine_version" {
   default = "2.8.24"
 }
 
+variable "parameter_group_name" {
+  default = "default.redis2.8"
+}
+
 variable "instance_type" {
   default = "cache.m3.medium"
 }
