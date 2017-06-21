@@ -23,6 +23,9 @@ variable "maintenance_window" {
 
 # tags
 variable "tag_name" {}
+
 variable "tag_environment" {}
 variable "tag_team" {}
 variable "tag_application" {}
+variable "tag_contact-email" {}
+variable "tag_customer" {}

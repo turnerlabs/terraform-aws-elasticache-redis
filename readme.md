@@ -5,22 +5,26 @@ A Terraform module that represents an AWS ElastiCache Redis cluster.  Note that 
 ### Usage
 
 ```terraform
+provider "aws" {
+  region = "us-east-1"
+}
+
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v2.0"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v2.1"
 
-  cluster_id = "myteam-myapp-dev"
-
-  vpc_id = "vpc-20f74844"
-  private_subnet_ids = "subnet-4a887f3c,subnet-76dae35d"
-
-  engine_version = "2.8.24"
-  instance_type = "cache.m3.medium"
+  cluster_id         = "myteam-myapp-dev"
+  engine_version     = "2.8.24"
+  instance_type      = "cache.m3.medium"
   maintenance_window = "sun:05:00-sun:06:00"
+  vpc_id             = "vpc-d070efb3"
+  private_subnet_ids = "subnet-020d8b59,subnet-13f50b64"
 
-  tag_name = "redis"
-  tag_environment = "dev"
-  tag_team = "myteam"
-  tag_application = "myapp"
+  tag_name          = "myteam-myapp-dev"
+  tag_team          = "my-team"
+  tag_contact-email = "my-team@turner.com"
+  tag_application   = "my-app"
+  tag_environment   = "dev"
+  tag_customer      = "my-customer"
 }
 ```
 
@@ -38,6 +42,8 @@ module "elasticache_redis" {
 - `tag_environment`
 - `tag_team`
 - `tag_application`
+- `tag_customer`
+- `tag_contact-email`
 
 
 ### Outputs
