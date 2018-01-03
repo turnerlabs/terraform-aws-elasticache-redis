@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 module "elasticache_redis" {
-  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v2.1"
+  source = "github.com/turnerlabs/terraform-aws-elasticache-redis?ref=v2.2"
 
   cluster_id         = "myteam-myapp-dev"
   engine_version     = "2.8.24"
