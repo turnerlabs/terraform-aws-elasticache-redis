@@ -1,7 +1,7 @@
 resource "aws_security_group" "redis" {
   vpc_id = var.vpc_id
 
-  tags {
+  tags = {
     Name          = var.tag_name
     environment   = var.tag_environment
     team          = var.tag_team
@@ -14,7 +14,7 @@ resource "aws_security_group" "redis" {
 resource "aws_elasticache_subnet_group" "default" {
   name        = "subnet-group-${var.tag_team}-${var.tag_application}-${var.tag_environment}"
   description = "Private subnets for the ElastiCache instances: ${var.tag_team} ${var.tag_application} ${var.tag_environment}"
-  subnet_ids  = "${split(",", var.private_subnet_ids)}"
+  subnet_ids  = split(",", var.private_subnet_ids)
 }
 
 resource "aws_elasticache_cluster" "redis" {
@@ -29,7 +29,7 @@ resource "aws_elasticache_cluster" "redis" {
   subnet_group_name    = aws_elasticache_subnet_group.default.name
   security_group_ids   = [aws_security_group.redis.id]
 
-  tags {
+  tags = {
     Name          = var.tag_name
     environment   = var.tag_environment
     team          = var.tag_team
